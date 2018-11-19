@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		001196D521A36A29008FFED6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 001196D421A36A29008FFED6 /* GoogleService-Info.plist */; };
+		001196D721A381DF008FFED6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001196D621A381DF008FFED6 /* MainTabBarController.swift */; };
+		001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001196D821A382D1008FFED6 /* UserProfileController.swift */; };
 		0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */; };
 		0081BDE121A3492B00DCB0E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDE021A3492B00DCB0E6 /* ViewController.swift */; };
 		0081BDE421A3492B00DCB0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE221A3492B00DCB0E6 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		001196D421A36A29008FFED6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		001196D621A381DF008FFED6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		001196D821A382D1008FFED6 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		0081BDDB21A3492B00DCB0E6 /* recomondo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recomondo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0081BDE021A3492B00DCB0E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			children = (
 				0081BDF021A35A7200DCB0E6 /* Utils */,
 				0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */,
+				001196D621A381DF008FFED6 /* MainTabBarController.swift */,
+				001196D821A382D1008FFED6 /* UserProfileController.swift */,
 				0081BDE021A3492B00DCB0E6 /* ViewController.swift */,
 				0081BDE221A3492B00DCB0E6 /* Main.storyboard */,
 				0081BDE521A3492D00DCB0E6 /* Assets.xcassets */,
@@ -231,6 +237,8 @@
 			files = (
 				0081BDE121A3492B00DCB0E6 /* ViewController.swift in Sources */,
 				0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */,
+				001196D721A381DF008FFED6 /* MainTabBarController.swift in Sources */,
+				001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */,
 				0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
