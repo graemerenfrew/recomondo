@@ -19,13 +19,11 @@ class MainTabBarController: UITabBarController {
         let navController = UINavigationController(rootViewController: userProfileController)
         
         // button.setImage(Image Literal, for: .normal) and then click the icon that Image Literal transforms into
-        let profile_selected = UIImage(named: "profile_selected")
-        let profile = UIImage(named: "profile")
-        navController.tabBarItem.image = profile
-        navController.tabBarItem.selectedImage = profile_selected
+       
+        navController.tabBarItem.image = #imageLiteral(resourceName: "Profile")
+        navController.tabBarItem.selectedImage = #imageLiteral(resourceName: "Profile_Selected")
         
-        
-        viewControllers = [navController]
+        viewControllers = [navController, UIViewController()]
     }
     
 }
