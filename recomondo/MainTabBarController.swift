@@ -9,10 +9,27 @@
 import UIKit
 import FirebaseAuth
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let index = viewControllers?.index(of: viewController)
+        if index == 2 {
+            //we always have to construct this with a layout when using a collection view
+            let layout = UICollectionViewFlowLayout()
+            let photoSelectorController = PhotoSelectorController(collectionViewLayout: layout)
+            let navController = UINavigationController(rootViewController: photoSelectorController)
+            present(navController, animated: true, completion: nil)
+            return false  //disable nav bar
+        }
+        return true
+ 
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = self //run the disable nav bar
         
         //check we have a logged in user
         if Auth.auth().currentUser == nil {
@@ -27,8 +44,6 @@ class MainTabBarController: UITabBarController {
         }
         
         setupViewControllers()
-      
-        
     }
     
     func setupViewControllers() {
