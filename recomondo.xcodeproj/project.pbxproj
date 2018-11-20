@@ -64,8 +64,8 @@
 		001196DD21A3FFCF008FFED6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0081BDE021A3492B00DCB0E6 /* SignUpController.swift */,
 				001196DE21A3FFF8008FFED6 /* LoginController.swift */,
+				0081BDE021A3492B00DCB0E6 /* SignUpController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

@@ -26,17 +26,20 @@ class MainTabBarController: UITabBarController {
             return
         }
         
+        setupViewControllers()
       
+        
+    }
+    
+    func setupViewControllers()
+    {
         let layout = UICollectionViewFlowLayout()
         let userProfileController = UserProfileController(collectionViewLayout: layout)
         let navController = UINavigationController(rootViewController: userProfileController)
         
-        // button.setImage(Image Literal, for: .normal) and then click the icon that Image Literal transforms into
-       
         navController.tabBarItem.image = #imageLiteral(resourceName: "Profile")
         navController.tabBarItem.selectedImage = #imageLiteral(resourceName: "Profile_Selected")
         
         viewControllers = [navController, UIViewController()]
     }
-    
 }
