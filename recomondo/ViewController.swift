@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }()
     
     @objc func handleTextInputChange(){
-        let isFormValid = emailTextField.text?.characters.count  ?? 0 > 0 && usernameTextField.text?.characters.count  ?? 0 > 0 && passwordTextField.text?.characters.count  ?? 0 > 0
+        let isFormValid = emailTextField.text?.isEmpty == false && usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
         
         if isFormValid {
             signUpButton.isEnabled = true
