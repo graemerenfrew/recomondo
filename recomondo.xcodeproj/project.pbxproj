@@ -15,6 +15,7 @@
 		001196E221A41D74008FFED6 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001196E121A41D74008FFED6 /* PhotoSelectorController.swift */; };
 		00255DF621A5713900014EF3 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00255DF521A5713900014EF3 /* PhotoSelectorCell.swift */; };
 		00255DF821A57A6D00014EF3 /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00255DF721A57A6D00014EF3 /* PhotoSelectorHeader.swift */; };
+		00255DFA21A5AE9A00014EF3 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00255DF921A5AE9A00014EF3 /* SharePhotoController.swift */; };
 		0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */; };
 		0081BDE121A3492B00DCB0E6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDE021A3492B00DCB0E6 /* SignUpController.swift */; };
 		0081BDE421A3492B00DCB0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE221A3492B00DCB0E6 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		001196E121A41D74008FFED6 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		00255DF521A5713900014EF3 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
 		00255DF721A57A6D00014EF3 /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
+		00255DF921A5AE9A00014EF3 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		0081BDDB21A3492B00DCB0E6 /* recomondo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recomondo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0081BDE021A3492B00DCB0E6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				001196E121A41D74008FFED6 /* PhotoSelectorController.swift */,
 				00255DF521A5713900014EF3 /* PhotoSelectorCell.swift */,
 				00255DF721A57A6D00014EF3 /* PhotoSelectorHeader.swift */,
+				00255DF921A5AE9A00014EF3 /* SharePhotoController.swift */,
 			);
 			path = AddPost;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00255DFA21A5AE9A00014EF3 /* SharePhotoController.swift in Sources */,
 				0081BDE121A3492B00DCB0E6 /* SignUpController.swift in Sources */,
 				00255DF621A5713900014EF3 /* PhotoSelectorCell.swift in Sources */,
 				0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */,

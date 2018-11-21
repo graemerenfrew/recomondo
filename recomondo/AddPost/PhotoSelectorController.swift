@@ -36,6 +36,10 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         //now we havea  seleced image, reload the view to populate the header
         self.collectionView?.reloadData()
         
+        //once selected, scroll the grid cells back to the top
+        let indexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
+        
     }
     
     var selectedImage:UIImage?
@@ -45,7 +49,7 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     fileprivate func assetFetchOptions() -> PHFetchOptions
     {
         let fetchOptions = PHFetchOptions()
-        fetchOptions.fetchLimit = 15
+        fetchOptions.fetchLimit = 32
         //sort by most recent
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchOptions.sortDescriptors = [sortDescriptor]
@@ -98,8 +102,14 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         let width = view.frame.width  //square
         return CGSize(width: width, height: width)
     }
+    
+    var header: PhotoSelectorHeader?
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! PhotoSelectorHeader
+        
+        //put the header into the self.header variable above so we can pass it around
+        self.header = header
         
         header.photoImageView.image = selectedImage  //blurry image
         //what's the index - have to do an if statement because otherwise I cannot use an optional value - selectedImage- in the index of function
@@ -162,5 +172,10 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     @objc func handleNext()
     {
         print("handling next")
+        //push the sharePhoto controller onto the stack
+        let sharePhotoController = SharePhotoController()
+        sharePhotoController.selectedImage = header?.photoImageView.image
+        
+        navigationController?.pushViewController(sharePhotoController, animated: true)
     }
 }
