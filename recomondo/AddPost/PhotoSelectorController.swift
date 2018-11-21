@@ -17,7 +17,7 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .yellow
+        collectionView?.backgroundColor = .white
         
         setupNavigationButtons()
         
@@ -26,7 +26,6 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         //put the custom header in the view
         collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
         
-        print("DEBUG**** About to call fetchPhotos ****")
         fetchPhotos()
         
     }
@@ -35,9 +34,12 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     
     fileprivate func fetchPhotos()
     {
-        print("DEBUG****Fetching photos")
+        
         let fetchOptions = PHFetchOptions()
         fetchOptions.fetchLimit = 10
+        //sort by most recent
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchOptions.sortDescriptors = [sortDescriptor]
         
         let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         allPhotos.enumerateObjects( { (asset, count, stop) in
@@ -76,7 +78,8 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     
     //how many elements in this collection view?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        //return 5
+        return images.count
     }
     //what size will the items be?
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -95,6 +98,7 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PhotoSelectorCell
         
         //cell.backgroundColor = .blue
+        cell.photoImageView.image = images[indexPath.item]
         return cell
     }
     
