@@ -39,41 +39,55 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     }
     
     var selectedImage:UIImage?
+    var images = [UIImage]() //this holds the small thumbnails loading in to the selection grid quickly
+    var assets = [PHAsset]() //better quality image for viewing on the header cell
     
-    var images = [UIImage]()
-    
-    fileprivate func fetchPhotos()
+    fileprivate func assetFetchOptions() -> PHFetchOptions
     {
-        
         let fetchOptions = PHFetchOptions()
-        fetchOptions.fetchLimit = 10
+        fetchOptions.fetchLimit = 15
         //sort by most recent
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchOptions.sortDescriptors = [sortDescriptor]
         
-        let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        allPhotos.enumerateObjects( { (asset, count, stop) in
-
-            let imageManager = PHImageManager.default()
-            let targetSize = CGSize(width: 350, height: 350)
-            let options = PHImageRequestOptions()
-            options.isSynchronous = true
-            imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options, resultHandler: { (image, info) in
-                if let image = image {
-                    self.images.append(image)
-                    
-                    //if there is no selected image, set one immediately from the arrage
-                    if self.selectedImage == nil {
-                        self.selectedImage = image
+        return fetchOptions
+    }
+    
+    fileprivate func fetchPhotos()
+    {
+        
+        let allPhotos = PHAsset.fetchAssets(with: .image, options: assetFetchOptions())
+     
+        //create a queue on which to load the photos
+        DispatchQueue.global(qos: .background).async{
+            allPhotos.enumerateObjects( { (asset, count, stop) in
+                print("DEBUG GETTING PHOTO: \(count)")
+                let imageManager = PHImageManager.default()
+                let targetSize = CGSize(width: 200, height: 200)
+                let options = PHImageRequestOptions()
+                options.isSynchronous = true
+                imageManager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFit, options: options, resultHandler: { (image, info) in
+                    if let image = image {
+                        
+                        self.images.append(image) //low-qty thumbnails
+                        self.assets.append(asset) //for tracking the image assets, so we can get the decent quality one for the header
+                        
+                        //if there is no selected image, set one immediately from the arrage
+                        if self.selectedImage == nil {
+                            self.selectedImage = image
+                        }
                     }
-                }
-                //once we have the images, reload the view
-                if count == allPhotos.count - 1 {
-                    self.collectionView?.reloadData()
-                }
+                    //once we have the images, reload the view the main thread, otherwise the global thread takes about 15 secs to give focus back to the UI
+                    if count == allPhotos.count - 1 {
+                        DispatchQueue.main.async {
+                            self.collectionView?.reloadData()
+                        }
+                    }
+                })
+                
             })
-            
-        })
+        }
+        
     }
     
     //build the header
@@ -87,8 +101,21 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! PhotoSelectorHeader
         
-        header.photoImageView.image = selectedImage
-        
+        header.photoImageView.image = selectedImage  //blurry image
+        //what's the index - have to do an if statement because otherwise I cannot use an optional value - selectedImage- in the index of function
+        if let selectedImage = selectedImage {
+            if let index = self.images.index(of: selectedImage) {
+                let selectedAsset = self.assets[index]
+            
+                let imageManager = PHImageManager.default()
+                let targetSize = CGSize(width:600, height:600)
+                
+                imageManager.requestImage(for: selectedAsset, targetSize: targetSize, contentMode: .default, options: nil) { (image, info) in
+                    header.photoImageView.image = image
+                }
+            }
+        }
+       
         return header                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     }
     
