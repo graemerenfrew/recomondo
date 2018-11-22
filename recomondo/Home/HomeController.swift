@@ -16,10 +16,9 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor  = .white
-        
+        collectionView?.backgroundColor  = .white        
         collectionView?.register(HomePostCell.self, forCellWithReuseIdentifier: cellId)
-        
+
         setupNavigationItems()
         fetchOrderedPosts()
         
@@ -29,31 +28,30 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     fileprivate func fetchOrderedPosts() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference().child("posts").child(uid)
         
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let userDictionary = snapshot.value as? [String: Any] else {return}
-            let user = User(dictionary: userDictionary)
-        
-            ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
-                guard let dictionary = snapshot.value as? [String: Any] else { return }
-                
-                
-                let post = Post(user: user, dictionary: dictionary)
-                //let post = Post(dummyUser: User, dictionary: dictionary)
-                self.posts.insert(post, at: 0)
-                self.collectionView?.reloadData()
-                
-            }) { (err) in
-                print("Failed to fetch ordered posts for the home view:", err)
-            }
-        }) {err in
-            print("failed to fetch user for posts:", err)
+        Database.fetchUserWithUID(uid: uid) { (user) in
+            self.fetchPostsWithUser(user: user)
         }
         
-       
     }
     
+    fileprivate func fetchPostsWithUser(user: User) {
+        //guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = Database.database().reference().child("posts").child(user.uid)
+        ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
+            
+            
+            let post = Post(user: user, dictionary: dictionary)
+            //let post = Post(dummyUser: User, dictionary: dictionary)
+            self.posts.insert(post, at: 0)
+            self.collectionView?.reloadData()
+            
+        }) { (err) in
+            print("Failed to fetch  posts for the home view:", err)
+        }
+    }
     func setupNavigationItems()
     {
         navigationItem.titleView = UIImageView(image:  #imageLiteral(resourceName: "Logo_Recomondo"))

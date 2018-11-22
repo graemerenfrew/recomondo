@@ -28,6 +28,7 @@
 		0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDF121A35A8800DCB0E6 /* Extensions.swift */; };
 		00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABB83121A71A34000F2E24 /* Assets.xcassets */; };
 		00ABB83421A732C8000F2E24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83321A732C8000F2E24 /* User.swift */; };
+		00ABB83621A73B99000F2E24 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */; };
 		BD32D38B9883C5148F3EAF8F /* Pods_recomondo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		0081BDF121A35A8800DCB0E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00ABB83121A71A34000F2E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00ABB83321A732C8000F2E24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		1EA8F0862A4D388E9554AD62 /* Pods-recomondo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.debug.xcconfig"; sourceTree = "<group>"; };
 		99DE2BEE803C9C7D3B6BB2E6 /* Pods-recomondo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.release.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.release.xcconfig"; sourceTree = "<group>"; };
 		A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recomondo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 			children = (
 				0081BDF121A35A8800DCB0E6 /* Extensions.swift */,
 				0044F0DD21A6883D00F5FB6A /* CustomImageView.swift */,
+				00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00ABB83621A73B99000F2E24 /* FirebaseUtils.swift in Sources */,
 				00255DFA21A5AE9A00014EF3 /* SharePhotoController.swift in Sources */,
 				0081BDE121A3492B00DCB0E6 /* SignUpController.swift in Sources */,
 				00255DF621A5713900014EF3 /* PhotoSelectorCell.swift in Sources */,
