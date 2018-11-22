@@ -38,7 +38,9 @@ class UserProfileController: UICollectionViewController , UICollectionViewDelega
         ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
             
-            let post = Post(dictionary: dictionary)
+            guard let user = self.user else {return}
+            let post = Post(user: user, dictionary: dictionary)
+            
             self.posts.insert(post, at: 0)
 
             /*self.posts.append(post)
@@ -53,36 +55,7 @@ class UserProfileController: UICollectionViewController , UICollectionViewDelega
     
     var posts = [Post]()
     
-    fileprivate func fetchPosts()
-    {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        //get all my posts out the database
-
-        let ref = Database.database().reference().child("posts").child(uid)
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            print("snapshot: \(snapshot.value ?? "")")
-            
-            guard let dictionaries = snapshot.value as? [String: Any] else
-            {
-                return
-            }
-            dictionaries.forEach({ (key, value) in
-                print("Key \(key), Value \(value)")
-                guard let dictionary = value as? [String: Any] else {return}
-                let post = Post(dictionary: dictionary)
-                print(post.imageUrl)
-                self.posts.append(post)
-                //let imageUrl = dictionary["imageUrl"] as? String
-                //print("Image url: \(imageUrl ?? "")")
-                
-            })
-            self.collectionView.reloadData()
-        }) { (err) in
-            print("failed to post:", err)
-        }
-        
-    }
+    
     
     fileprivate func setupLogOutButton()
     {
@@ -163,12 +136,3 @@ class UserProfileController: UICollectionViewController , UICollectionViewDelega
     }
 }
 
-struct User {
-    let username: String
-    let profileImageUrl: String
-    
-    init(dictionary: [String: Any]) {
-        self.username = dictionary["username"] as? String ?? ""
-        self.profileImageUrl = dictionary["profileImageUrl"]  as? String ?? ""
-    }
-}

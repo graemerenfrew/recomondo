@@ -27,6 +27,7 @@
 		0081BDE921A3492D00DCB0E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */; };
 		0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDF121A35A8800DCB0E6 /* Extensions.swift */; };
 		00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABB83121A71A34000F2E24 /* Assets.xcassets */; };
+		00ABB83421A732C8000F2E24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83321A732C8000F2E24 /* User.swift */; };
 		BD32D38B9883C5148F3EAF8F /* Pods_recomondo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		0081BDEA21A3492D00DCB0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0081BDF121A35A8800DCB0E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00ABB83121A71A34000F2E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00ABB83321A732C8000F2E24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1EA8F0862A4D388E9554AD62 /* Pods-recomondo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.debug.xcconfig"; sourceTree = "<group>"; };
 		99DE2BEE803C9C7D3B6BB2E6 /* Pods-recomondo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.release.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.release.xcconfig"; sourceTree = "<group>"; };
 		A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recomondo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0044F0D921A67D7500F5FB6A /* Post.swift */,
+				00ABB83321A732C8000F2E24 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				0044F0DA21A67D7500F5FB6A /* Post.swift in Sources */,
 				0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */,
 				001196D721A381DF008FFED6 /* MainTabBarController.swift in Sources */,
+				00ABB83421A732C8000F2E24 /* User.swift in Sources */,
 				001196DC21A38E38008FFED6 /* UserProfileHeader.swift in Sources */,
 				0044F0DC21A6800600F5FB6A /* UserProfilePhotoCell.swift in Sources */,
 				001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */,

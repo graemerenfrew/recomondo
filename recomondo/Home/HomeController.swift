@@ -31,16 +31,27 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let ref = Database.database().reference().child("posts").child(uid)
         
-        ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            
-            let post = Post(dictionary: dictionary)
-            self.posts.insert(post, at: 0)
-            self.collectionView?.reloadData()
-            
-        }) { (err) in
-            print("Failed to fetch ordered posts for the home view:", err)
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let userDictionary = snapshot.value as? [String: Any] else {return}
+            let user = User(dictionary: userDictionary)
+        
+            ref.queryOrdered(byChild: "creationDate").observe(.childAdded, with: { (snapshot) in
+                guard let dictionary = snapshot.value as? [String: Any] else { return }
+                
+                
+                let post = Post(user: user, dictionary: dictionary)
+                //let post = Post(dummyUser: User, dictionary: dictionary)
+                self.posts.insert(post, at: 0)
+                self.collectionView?.reloadData()
+                
+            }) { (err) in
+                print("Failed to fetch ordered posts for the home view:", err)
+            }
+        }) {err in
+            print("failed to fetch user for posts:", err)
         }
+        
+       
     }
     
     func setupNavigationItems()
