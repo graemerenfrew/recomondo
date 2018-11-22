@@ -19,12 +19,14 @@
 		0044F0DA21A67D7500F5FB6A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F0D921A67D7500F5FB6A /* Post.swift */; };
 		0044F0DC21A6800600F5FB6A /* UserProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F0DB21A6800500F5FB6A /* UserProfilePhotoCell.swift */; };
 		0044F0DE21A6883E00F5FB6A /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F0DD21A6883D00F5FB6A /* CustomImageView.swift */; };
+		0044F0E121A6AF9000F5FB6A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F0E021A6AF9000F5FB6A /* HomeController.swift */; };
+		0044F0E321A6B0C400F5FB6A /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F0E221A6B0C400F5FB6A /* HomePostCell.swift */; };
 		0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */; };
 		0081BDE121A3492B00DCB0E6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDE021A3492B00DCB0E6 /* SignUpController.swift */; };
 		0081BDE421A3492B00DCB0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE221A3492B00DCB0E6 /* Main.storyboard */; };
-		0081BDE621A3492D00DCB0E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE521A3492D00DCB0E6 /* Assets.xcassets */; };
 		0081BDE921A3492D00DCB0E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */; };
 		0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDF121A35A8800DCB0E6 /* Extensions.swift */; };
+		00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABB83121A71A34000F2E24 /* Assets.xcassets */; };
 		BD32D38B9883C5148F3EAF8F /* Pods_recomondo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,14 +43,16 @@
 		0044F0D921A67D7500F5FB6A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0044F0DB21A6800500F5FB6A /* UserProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCell.swift; sourceTree = "<group>"; };
 		0044F0DD21A6883D00F5FB6A /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		0044F0E021A6AF9000F5FB6A /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		0044F0E221A6B0C400F5FB6A /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
 		0081BDDB21A3492B00DCB0E6 /* recomondo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recomondo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0081BDE021A3492B00DCB0E6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		0081BDE321A3492B00DCB0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0081BDE521A3492D00DCB0E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0081BDE821A3492D00DCB0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0081BDEA21A3492D00DCB0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0081BDF121A35A8800DCB0E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		00ABB83121A71A34000F2E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EA8F0862A4D388E9554AD62 /* Pods-recomondo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.debug.xcconfig"; sourceTree = "<group>"; };
 		99DE2BEE803C9C7D3B6BB2E6 /* Pods-recomondo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.release.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.release.xcconfig"; sourceTree = "<group>"; };
 		A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recomondo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0044F0DF21A6AF7A00F5FB6A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0044F0E021A6AF9000F5FB6A /* HomeController.swift */,
+				0044F0E221A6B0C400F5FB6A /* HomePostCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		0081BDD221A3492B00DCB0E6 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,8 @@
 		0081BDDD21A3492B00DCB0E6 /* recomondo */ = {
 			isa = PBXGroup;
 			children = (
+				00ABB83121A71A34000F2E24 /* Assets.xcassets */,
+				0044F0DF21A6AF7A00F5FB6A /* Home */,
 				0044F0D821A67D6200F5FB6A /* Models */,
 				001196E021A41D5A008FFED6 /* AddPost */,
 				001196DD21A3FFCF008FFED6 /* Login */,
@@ -133,7 +148,6 @@
 				0081BDDE21A3492B00DCB0E6 /* AppDelegate.swift */,
 				001196D621A381DF008FFED6 /* MainTabBarController.swift */,
 				0081BDE221A3492B00DCB0E6 /* Main.storyboard */,
-				0081BDE521A3492D00DCB0E6 /* Assets.xcassets */,
 				0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */,
 				001196D421A36A29008FFED6 /* GoogleService-Info.plist */,
 				0081BDEA21A3492D00DCB0E6 /* Info.plist */,
@@ -228,8 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0081BDE921A3492D00DCB0E6 /* LaunchScreen.storyboard in Resources */,
-				0081BDE621A3492D00DCB0E6 /* Assets.xcassets in Resources */,
 				0081BDE421A3492B00DCB0E6 /* Main.storyboard in Resources */,
+				00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */,
 				001196D521A36A29008FFED6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,8 +320,10 @@
 				001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */,
 				0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */,
 				001196DF21A3FFF8008FFED6 /* LoginController.swift in Sources */,
+				0044F0E321A6B0C400F5FB6A /* HomePostCell.swift in Sources */,
 				00255DF821A57A6D00014EF3 /* PhotoSelectorHeader.swift in Sources */,
 				001196E221A41D74008FFED6 /* PhotoSelectorController.swift in Sources */,
+				0044F0E121A6AF9000F5FB6A /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
