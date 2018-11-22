@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 class CustomImageView: UIImageView {
+    
+    var lastURLUsedToLoadImage: String?
+    
     func loadImage(urlString: String) {
         print("loading image")
+        lastURLUsedToLoadImage = urlString //track if we already loaded this
         guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             if let err = err {
@@ -20,7 +24,7 @@ class CustomImageView: UIImageView {
             }
             
             //ensure we only reload the cells onetime
-            //if url.absoluteString != self.post?.imageUrl{ return }
+            if url.absoluteString != self.lastURLUsedToLoadImage{ return }
             
             guard let imageData = data else {return}
             
