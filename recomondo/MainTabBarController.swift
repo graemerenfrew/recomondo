@@ -51,7 +51,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Home"), selectedImage: #imageLiteral(resourceName: "Home_Selected"), rootViewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()))  //optional to show the Profile view on the Home, until we've built a nice home view
         
         //search
-        let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Search"), selectedImage: #imageLiteral(resourceName: "Search_Selected"))
+        let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Search"), selectedImage: #imageLiteral(resourceName: "Search_Selected"), rootViewController: UserSearchController(collectionViewLayout: UICollectionViewFlowLayout( )))
         let plusNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Photo"), selectedImage: #imageLiteral(resourceName: "Photo"))
         let likeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity"), selectedImage: #imageLiteral(resourceName: "Activity_Selected"))
         
