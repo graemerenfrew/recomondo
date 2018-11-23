@@ -97,6 +97,9 @@ class SharePhotoController: UIViewController {
         }
     }
     
+    //accessible outside the class
+    static let updateFeedNotificationName = NSNotification.Name(rawValue: "UpdateFeed")
+    
     fileprivate func saveToDatabaseWithImageUrl(imageUrl: String){
         guard let postImage = selectedImage else { return }
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -116,6 +119,10 @@ class SharePhotoController: UIViewController {
             }
             print("successfully saved post to db")
             self.dismiss(animated: true, completion: nil)
+            
+            //this posts a notification to the entire system
+            
+            NotificationCenter.default.post(name: SharePhotoController.updateFeedNotificationName, object: nil)
         }
         
         

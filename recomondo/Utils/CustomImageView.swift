@@ -18,6 +18,9 @@ class CustomImageView: UIImageView {
     func loadImage(urlString: String) {
         lastURLUsedToLoadImage = urlString //track if we already loaded this
         
+        //avoid the flickering
+        self.image = nil
+        
         //check if we already cached this particular image before
         if let cachedImage = imageCache[urlString] {
             self.image = cachedImage
