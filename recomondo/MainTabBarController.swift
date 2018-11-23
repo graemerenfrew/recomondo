@@ -53,6 +53,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         //search
         let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Search"), selectedImage: #imageLiteral(resourceName: "Search_Selected"), rootViewController: UserSearchController(collectionViewLayout: UICollectionViewFlowLayout( )))
         let plusNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Photo"), selectedImage: #imageLiteral(resourceName: "Photo"))
+        let checkInNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "grid"), selectedImage: #imageLiteral(resourceName: "list"), rootViewController: CheckInController(collectionViewLayout: UICollectionViewFlowLayout( )))
         let likeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity"), selectedImage: #imageLiteral(resourceName: "Activity_Selected"))
         
         //user profile
@@ -69,6 +70,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         viewControllers = [homeNavController,
                            searchNavController,
                            plusNavController,
+                           checkInNavController,
                            likeNavController,
                            userProfileNavController]
         

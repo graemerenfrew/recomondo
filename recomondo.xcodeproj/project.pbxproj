@@ -35,6 +35,7 @@
 		00ABB84221A850CF000F2E24 /* PreviewPhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84121A850CF000F2E24 /* PreviewPhotoContainerView.swift */; };
 		00ABB84421A86266000F2E24 /* CustomAnimationPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84321A86266000F2E24 /* CustomAnimationPresentor.swift */; };
 		00ABB84621A86665000F2E24 /* CustomAnimationDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84521A86665000F2E24 /* CustomAnimationDismisser.swift */; };
+		00ABB84B21A86BD7000F2E24 /* CheckInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84A21A86BD7000F2E24 /* CheckInController.swift */; };
 		BD32D38B9883C5148F3EAF8F /* Pods_recomondo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		00ABB84121A850CF000F2E24 /* PreviewPhotoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPhotoContainerView.swift; sourceTree = "<group>"; };
 		00ABB84321A86266000F2E24 /* CustomAnimationPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentor.swift; sourceTree = "<group>"; };
 		00ABB84521A86665000F2E24 /* CustomAnimationDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationDismisser.swift; sourceTree = "<group>"; };
+		00ABB84A21A86BD7000F2E24 /* CheckInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInController.swift; sourceTree = "<group>"; };
 		1EA8F0862A4D388E9554AD62 /* Pods-recomondo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.debug.xcconfig"; sourceTree = "<group>"; };
 		99DE2BEE803C9C7D3B6BB2E6 /* Pods-recomondo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.release.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.release.xcconfig"; sourceTree = "<group>"; };
 		A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recomondo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 		0081BDDD21A3492B00DCB0E6 /* recomondo */ = {
 			isa = PBXGroup;
 			children = (
+				00ABB84721A869BA000F2E24 /* CheckIn */,
 				00ABB83E21A83DEF000F2E24 /* Camera */,
 				00ABB83921A73C79000F2E24 /* Search */,
 				00ABB83121A71A34000F2E24 /* Assets.xcassets */,
@@ -202,6 +205,14 @@
 				00ABB84521A86665000F2E24 /* CustomAnimationDismisser.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		00ABB84721A869BA000F2E24 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				00ABB84A21A86BD7000F2E24 /* CheckInController.swift */,
+			);
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		63C29E2ED4B69CF26CEA409F /* Pods */ = {
@@ -366,6 +377,7 @@
 				00ABB84621A86665000F2E24 /* CustomAnimationDismisser.swift in Sources */,
 				001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */,
 				0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */,
+				00ABB84B21A86BD7000F2E24 /* CheckInController.swift in Sources */,
 				00ABB84221A850CF000F2E24 /* PreviewPhotoContainerView.swift in Sources */,
 				001196DF21A3FFF8008FFED6 /* LoginController.swift in Sources */,
 				0044F0E321A6B0C400F5FB6A /* HomePostCell.swift in Sources */,
