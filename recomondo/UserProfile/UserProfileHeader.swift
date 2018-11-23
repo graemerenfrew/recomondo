@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class UserProfileHeader: UICollectionViewCell {
     
@@ -17,9 +18,25 @@ class UserProfileHeader: UICollectionViewCell {
             profileImageView.loadImage(urlString: profileImageUrl)
             setupProfileImage()
             userNameLabel.text = self.user?.username
+            
+            setupEditFollowButton()
+       
         }
     }
     
+    fileprivate func setupEditFollowButton()
+    {
+        guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else {return}
+        guard let userId = user?.uid else {return}
+        //if you're viewing someone elses profile, so Follow
+        if currentLoggedInUserId == userId {
+           // edit profile logic
+            
+        }else
+        {
+            editProfileFollowButton.setTitle("Follow", for: .normal)
+        }
+    }
     
     let profileImageView: CustomImageView = {
         let iv = CustomImageView()
@@ -79,7 +96,9 @@ class UserProfileHeader: UICollectionViewCell {
         label.textAlignment = .center
         return label
     }()
-    let editProfileButton: UIButton = {
+    
+    //remove let and make this lazy var otherwise the logic doesnt seem to work
+    lazy var editProfileFollowButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Edit profile", for:  .normal)
         button.setTitleColor(.black, for: .normal)
@@ -87,8 +106,15 @@ class UserProfileHeader: UICollectionViewCell {
         button.layer.borderColor   = UIColor.lightGray.cgColor
         button.layer.cornerRadius = 3
         button.layer.borderWidth = 1
+        
+        button.addTarget(self, action: #selector(handleEditProfileOrFollow), for: .touchUpInside)
+        
         return button
     }()
+    
+    @objc func handleEditProfileOrFollow() {
+        print("follow or edit")
+    }
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -110,8 +136,8 @@ class UserProfileHeader: UICollectionViewCell {
     }
     fileprivate func setupEditProfileButton()
     {
-        addSubview(editProfileButton)
-        editProfileButton.anchor(top: postsLabel.bottomAnchor, left: postsLabel.leftAnchor, bottom: nil, right: followingLabel.rightAnchor, paddingTop: 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 34)
+        addSubview(editProfileFollowButton)
+        editProfileFollowButton.anchor(top: postsLabel.bottomAnchor, left: postsLabel.leftAnchor, bottom: nil, right: followingLabel.rightAnchor, paddingTop: 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 34)
     }
     fileprivate func setupUserStatsView(){
         let stackView = UIStackView(arrangedSubviews: [postsLabel, followersLabel, followingLabel])
