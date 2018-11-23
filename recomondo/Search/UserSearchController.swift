@@ -57,7 +57,26 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
         //allow the list to bounce, even if there are not enough results on the screen
         collectionView?.alwaysBounceVertical = true
         
+        //hide the keyboard on an action
+        collectionView?.keyboardDismissMode = .onDrag
+        
         fetchUsers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchBar.isHidden = false //make search bar reappear if we skip back and forth 
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.isHidden = true
+        searchBar.resignFirstResponder()  //hide the keyboard :S when we show the profile view
+        let user = filteredUsers[indexPath.item]
+        print(user.username)
+        
+        let userProfileController = UserProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+        userProfileController.userId = user.uid
+        navigationController?.pushViewController(userProfileController, animated: true)
     }
     
     var filteredUsers = [User]() //we want to keep 'users' as master list, then this list for filtering
@@ -70,6 +89,12 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
             
             guard let dictionaries = snapshot.value as? [String:Any] else {return}
             dictionaries.forEach({ (key, value) in
+                
+                //remove yourself from the search list
+                if key == Auth.auth().currentUser?.uid {
+                    print("removing self from search result")
+                    return
+                }
                 
                 guard let userDictionary = value as? [String: Any] else { return}
                 let user = User(uid: key, dictionary: userDictionary)
