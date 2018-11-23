@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class UserProfileHeader: UICollectionViewCell {
     
@@ -114,6 +115,19 @@ class UserProfileHeader: UICollectionViewCell {
     
     @objc func handleEditProfileOrFollow() {
         print("follow or edit")
+        
+        guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else {return}
+        guard let userId = user?.uid else {return}
+        let ref = Database.database().reference().child("following").child(currentLoggedInUserId)
+        
+        let values = [userId: 1]
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to follow user: ", err)
+                return
+            }
+            print("successfully followed user:", self.user?.username ?? "")
+        }
     }
     
     override init(frame: CGRect){
