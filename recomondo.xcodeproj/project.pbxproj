@@ -26,6 +26,7 @@
 		0081BDE421A3492B00DCB0E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE221A3492B00DCB0E6 /* Main.storyboard */; };
 		0081BDE921A3492D00DCB0E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */; };
 		0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDF121A35A8800DCB0E6 /* Extensions.swift */; };
+		00A8B34C21AECAD5001D3B91 /* VisitVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8B34B21AECAD5001D3B91 /* VisitVenueController.swift */; };
 		00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABB83121A71A34000F2E24 /* Assets.xcassets */; };
 		00ABB83421A732C8000F2E24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83321A732C8000F2E24 /* User.swift */; };
 		00ABB83621A73B99000F2E24 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */; };
@@ -36,6 +37,12 @@
 		00ABB84421A86266000F2E24 /* CustomAnimationPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84321A86266000F2E24 /* CustomAnimationPresentor.swift */; };
 		00ABB84621A86665000F2E24 /* CustomAnimationDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84521A86665000F2E24 /* CustomAnimationDismisser.swift */; };
 		00ABB84B21A86BD7000F2E24 /* CheckInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84A21A86BD7000F2E24 /* CheckInController.swift */; };
+		00ABB84F21A874DF000F2E24 /* CheckInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB84E21A874DF000F2E24 /* CheckInCell.swift */; };
+		00ABB87221A8817E000F2E24 /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB87121A8817E000F2E24 /* CustomMapView.swift */; };
+		00B7A7FD21AE723000803A80 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7A7FC21AE723000803A80 /* Visit.swift */; };
+		00B7A7FF21AE731100803A80 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7A7FE21AE731100803A80 /* Venue.swift */; };
+		00B7A80121AE7F3300803A80 /* Notes.txt in Sources */ = {isa = PBXBuildFile; fileRef = 00B7A80021AE7F3300803A80 /* Notes.txt */; };
+		00B7A80321AE806000803A80 /* MapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B7A80221AE806000803A80 /* MapItem.swift */; };
 		BD32D38B9883C5148F3EAF8F /* Pods_recomondo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +68,7 @@
 		0081BDE821A3492D00DCB0E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0081BDEA21A3492D00DCB0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0081BDF121A35A8800DCB0E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		00A8B34B21AECAD5001D3B91 /* VisitVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVenueController.swift; sourceTree = "<group>"; };
 		00ABB83121A71A34000F2E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00ABB83321A732C8000F2E24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
@@ -71,6 +79,12 @@
 		00ABB84321A86266000F2E24 /* CustomAnimationPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationPresentor.swift; sourceTree = "<group>"; };
 		00ABB84521A86665000F2E24 /* CustomAnimationDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimationDismisser.swift; sourceTree = "<group>"; };
 		00ABB84A21A86BD7000F2E24 /* CheckInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInController.swift; sourceTree = "<group>"; };
+		00ABB84E21A874DF000F2E24 /* CheckInCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCell.swift; sourceTree = "<group>"; };
+		00ABB87121A8817E000F2E24 /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
+		00B7A7FC21AE723000803A80 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		00B7A7FE21AE731100803A80 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		00B7A80021AE7F3300803A80 /* Notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
+		00B7A80221AE806000803A80 /* MapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapItem.swift; sourceTree = "<group>"; };
 		1EA8F0862A4D388E9554AD62 /* Pods-recomondo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.debug.xcconfig"; sourceTree = "<group>"; };
 		99DE2BEE803C9C7D3B6BB2E6 /* Pods-recomondo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recomondo.release.xcconfig"; path = "Pods/Target Support Files/Pods-recomondo/Pods-recomondo.release.xcconfig"; sourceTree = "<group>"; };
 		A6DA023471CFF8F7C7CF2C1E /* Pods_recomondo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_recomondo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +128,7 @@
 				00255DF521A5713900014EF3 /* PhotoSelectorCell.swift */,
 				00255DF721A57A6D00014EF3 /* PhotoSelectorHeader.swift */,
 				00255DF921A5AE9A00014EF3 /* SharePhotoController.swift */,
+				00A8B34B21AECAD5001D3B91 /* VisitVenueController.swift */,
 			);
 			path = AddPost;
 			sourceTree = "<group>";
@@ -122,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				0044F0D921A67D7500F5FB6A /* Post.swift */,
+				00B7A80221AE806000803A80 /* MapItem.swift */,
+				00B7A7FC21AE723000803A80 /* Visit.swift */,
+				00B7A7FE21AE731100803A80 /* Venue.swift */,
 				00ABB83321A732C8000F2E24 /* User.swift */,
 			);
 			path = Models;
@@ -173,6 +191,7 @@
 				0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */,
 				001196D421A36A29008FFED6 /* GoogleService-Info.plist */,
 				0081BDEA21A3492D00DCB0E6 /* Info.plist */,
+				00B7A80021AE7F3300803A80 /* Notes.txt */,
 			);
 			path = recomondo;
 			sourceTree = "<group>";
@@ -182,6 +201,7 @@
 			children = (
 				0081BDF121A35A8800DCB0E6 /* Extensions.swift */,
 				0044F0DD21A6883D00F5FB6A /* CustomImageView.swift */,
+				00ABB87121A8817E000F2E24 /* CustomMapView.swift */,
 				00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */,
 			);
 			path = Utils;
@@ -211,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				00ABB84A21A86BD7000F2E24 /* CheckInController.swift */,
+				00ABB84E21A874DF000F2E24 /* CheckInCell.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -360,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00ABB83D21A74371000F2E24 /* UserSearchCell.swift in Sources */,
+				00B7A7FF21AE731100803A80 /* Venue.swift in Sources */,
 				00ABB83621A73B99000F2E24 /* FirebaseUtils.swift in Sources */,
 				00255DFA21A5AE9A00014EF3 /* SharePhotoController.swift in Sources */,
 				0081BDE121A3492B00DCB0E6 /* SignUpController.swift in Sources */,
@@ -374,16 +396,22 @@
 				00ABB83421A732C8000F2E24 /* User.swift in Sources */,
 				001196DC21A38E38008FFED6 /* UserProfileHeader.swift in Sources */,
 				0044F0DC21A6800600F5FB6A /* UserProfilePhotoCell.swift in Sources */,
+				00B7A7FD21AE723000803A80 /* Visit.swift in Sources */,
+				00A8B34C21AECAD5001D3B91 /* VisitVenueController.swift in Sources */,
 				00ABB84621A86665000F2E24 /* CustomAnimationDismisser.swift in Sources */,
 				001196D921A382D1008FFED6 /* UserProfileController.swift in Sources */,
+				00ABB87221A8817E000F2E24 /* CustomMapView.swift in Sources */,
 				0081BDDF21A3492B00DCB0E6 /* AppDelegate.swift in Sources */,
 				00ABB84B21A86BD7000F2E24 /* CheckInController.swift in Sources */,
 				00ABB84221A850CF000F2E24 /* PreviewPhotoContainerView.swift in Sources */,
 				001196DF21A3FFF8008FFED6 /* LoginController.swift in Sources */,
+				00ABB84F21A874DF000F2E24 /* CheckInCell.swift in Sources */,
 				0044F0E321A6B0C400F5FB6A /* HomePostCell.swift in Sources */,
+				00B7A80321AE806000803A80 /* MapItem.swift in Sources */,
 				00255DF821A57A6D00014EF3 /* PhotoSelectorHeader.swift in Sources */,
 				001196E221A41D74008FFED6 /* PhotoSelectorController.swift in Sources */,
 				0044F0E121A6AF9000F5FB6A /* HomeController.swift in Sources */,
+				00B7A80121AE7F3300803A80 /* Notes.txt in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

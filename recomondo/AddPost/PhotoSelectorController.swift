@@ -17,7 +17,7 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .blue
         
         setupNavigationButtons()
         

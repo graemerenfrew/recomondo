@@ -1,0 +1,32 @@
+mapItem from MapKit
+
+{
+    isCurrentLocation = 0;
+    name = "Pizza Donna";
+    phoneNumber = "\U202d+31 20 675 07 36\U202c";
+    placemark = "Pizza Donna, Tolstraat 130, 1074 VL Amsterdam, Netherlands @ <+52.35230000,+4.90431000> +/- 0.00m, region CLCircularRegion (identifier:'<+52.35230001,+4.90431000> radius 141.18', center:<+52.35230001,+4.90431000>, radius:141.18m)";
+    timeZone = "Europe/Amsterdam (CET) offset 3600";
+    url = "http://www.pizzadonna.nl";
+}
+
+var myMapItemDictionary = [
+                           "isCurrentLocation":"0",
+                           "name": mapItem.name as? String ?? "",
+                           "phoneNumber" : mapItem.phoneNumber as? String ?? "",
+                           "placemark": mapItem.placemark as? String ?? "",
+                           "timeZone": mapItem.timeZone as? String ?? "",
+                           "url": mapItem.url  as? String ?? ""] as [String : Any]
+let myMapItem = MapItem(mapItemId: "123", dictionary: myMapItemDictionary)
+
+<+52.36690669,+4.86892491> +/- 65.00m (speed -1.00 mps / course -1.00) @ 28/11/2018, 12:56:30 Central European Standard Time
+
+
+ placemark = "Vondelpark, Vondelpark, 1071 Amsterdam, Netherlands @ <+52.35776056,+4.86746907> +/- 0.00m, region CLCircularRegion (identifier:'<+52.35752943,+4.86670664> radius 705.89', center:<+52.35752943,+4.86670664>, radius:705.89m)";
+
+name
+address
+postcode city
+country
+coorrds
+
+region
