@@ -181,8 +181,7 @@ fileprivate func fetchVenues(venueType: String) {
         searchBar.isHidden = true
         searchBar.resignFirstResponder()  //hide the keyboard :S when we show the profile view
         let venue = venues[indexPath.item]
-        print(venue.name)
-        
+
         let vistVenueController = VisitVenueController()
         vistVenueController.selectedVenue = venue
         
