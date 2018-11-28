@@ -61,6 +61,8 @@ class VisitVenueController: UIViewController  {
     
         let visit = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("visits").child(visit)
+
+        //check if the selected venue already exists in the local database
         
         self.saveToDatabase()
          /*

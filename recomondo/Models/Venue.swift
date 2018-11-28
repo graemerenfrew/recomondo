@@ -9,17 +9,20 @@
 import Foundation
 
 struct Venue{
-    let locationid: String
+    let venueId: String
     let name: String
-    let latitude: String
-    let longitude: String
-    let isCurrentLocation: Bool
+    let probability: String
+    let categories: String
+    let hierarchy: String
+    let creationDate: Date
     
-    init(locationid: String, dictionary: [String: Any]) {
-        self.locationid = locationid
+    init(venueId: String, dictionary: [String: Any]) {
+        self.venueId = venueId
         self.name =  dictionary["name"] as? String ?? ""
-        self.latitude = dictionary["latitude"] as? String ?? ""
-        self.longitude = dictionary["longitude"]  as? String ?? ""
-        self.isCurrentLocation = dictionary["isCurrentLocation"]  as? Bool ?? false
+        self.probability =  dictionary["name"] as? String ?? ""
+        self.categories =  dictionary["name"] as? String ?? ""
+        self.hierarchy =  dictionary["name"] as? String ?? ""
+        let secondsFrom1970 = dictionary["creationDate"] as? Double ?? 0
+        self.creationDate = Date(timeIntervalSince1970:   secondsFrom1970)
     }
 }

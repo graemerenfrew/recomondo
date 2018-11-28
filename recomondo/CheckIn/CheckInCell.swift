@@ -26,7 +26,21 @@ class VenueSearchCell: UICollectionViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
+  
+    let venueAddressLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Address"
+        label.font = UIFont.boldSystemFont(ofSize: 10)
+        return label
+    }()
     
+    let venueDistanceLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Distance"
+        label.font = UIFont.boldSystemFont(ofSize: 10)
+        return label
+    }()
+ 
     let separatorView: UIView = {
         let separatorView = UIView()
         separatorView.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -38,6 +52,8 @@ class VenueSearchCell: UICollectionViewCell {
         
         //addSubview(profileImageView)
         addSubview(venueNameLabel)
+        addSubview(venueAddressLabel)
+         addSubview(venueDistanceLabel)
         addSubview(separatorView)
         
        // profileImageView.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
@@ -51,7 +67,11 @@ class VenueSearchCell: UICollectionViewCell {
         
         venueNameLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
-        separatorView.anchor(top: nil, left: venueNameLabel.leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
+      venueAddressLabel.anchor(top: nil, left: leftAnchor, bottom: venueDistanceLabel.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        venueDistanceLabel.anchor(top: venueAddressLabel.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        separatorView.anchor(top: nil, left: venueDistanceLabel.leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
     }
     
     required init?(coder aDecoder: NSCoder) {

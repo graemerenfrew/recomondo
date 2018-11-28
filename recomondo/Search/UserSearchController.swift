@@ -35,9 +35,7 @@ class UserSearchController: UICollectionViewController, UICollectionViewDelegate
             (user) -> Bool in
             return user.username.lowercased().contains(searchText.lowercased())
             } }
-      
-      
-        
+
         self.collectionView?.reloadData()
     }
     

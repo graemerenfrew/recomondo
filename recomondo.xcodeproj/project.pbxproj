@@ -27,6 +27,7 @@
 		0081BDE921A3492D00DCB0E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0081BDE721A3492D00DCB0E6 /* LaunchScreen.storyboard */; };
 		0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081BDF121A35A8800DCB0E6 /* Extensions.swift */; };
 		00A8B34C21AECAD5001D3B91 /* VisitVenueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8B34B21AECAD5001D3B91 /* VisitVenueController.swift */; };
+		00A8B34E21AEE92C001D3B91 /* VenueLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8B34D21AEE92C001D3B91 /* VenueLocation.swift */; };
 		00ABB83221A71A35000F2E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABB83121A71A34000F2E24 /* Assets.xcassets */; };
 		00ABB83421A732C8000F2E24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83321A732C8000F2E24 /* User.swift */; };
 		00ABB83621A73B99000F2E24 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */; };
@@ -69,6 +70,7 @@
 		0081BDEA21A3492D00DCB0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0081BDF121A35A8800DCB0E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00A8B34B21AECAD5001D3B91 /* VisitVenueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVenueController.swift; sourceTree = "<group>"; };
+		00A8B34D21AEE92C001D3B91 /* VenueLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueLocation.swift; sourceTree = "<group>"; };
 		00ABB83121A71A34000F2E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00ABB83321A732C8000F2E24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00ABB83521A73B99000F2E24 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				00B7A80221AE806000803A80 /* MapItem.swift */,
 				00B7A7FC21AE723000803A80 /* Visit.swift */,
 				00B7A7FE21AE731100803A80 /* Venue.swift */,
+				00A8B34D21AEE92C001D3B91 /* VenueLocation.swift */,
 				00ABB83321A732C8000F2E24 /* User.swift */,
 			);
 			path = Models;
@@ -392,6 +395,7 @@
 				0081BDF221A35A8800DCB0E6 /* Extensions.swift in Sources */,
 				00ABB84421A86266000F2E24 /* CustomAnimationPresentor.swift in Sources */,
 				00ABB84021A83E34000F2E24 /* CameraController.swift in Sources */,
+				00A8B34E21AEE92C001D3B91 /* VenueLocation.swift in Sources */,
 				001196D721A381DF008FFED6 /* MainTabBarController.swift in Sources */,
 				00ABB83421A732C8000F2E24 /* User.swift in Sources */,
 				001196DC21A38E38008FFED6 /* UserProfileHeader.swift in Sources */,

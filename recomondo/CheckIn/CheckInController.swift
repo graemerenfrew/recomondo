@@ -26,23 +26,16 @@ class CheckInController: UICollectionViewController , UICollectionViewDelegateFl
     }()
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("This doesn't work yet")
-        print(searchText)
-        
+    
         //TODO run a map search with the contents of the search bar
         //then reload the collection
-        /*
-        if searchText.isEmpty {
-            filteredUsers = users
-        } else {
-            //filter users that meet the search string
-            self.filteredUsers = self.users.filter {
-                (user) -> Bool in
-                return user.username.lowercased().contains(searchText.lowercased())
-            } }
         
-        self.collectionView?.reloadData()
- */
+        //TODO Put in a pause so we don't get all the results for every key pressed
+        if searchText.isEmpty {
+           return
+        } else {
+            //search venues that match the string
+            fetchVenues(venueType: searchText.lowercased())}
     }
     
     
@@ -57,7 +50,7 @@ class CheckInController: UICollectionViewController , UICollectionViewDelegateFl
         locationManager.delegate = self
         setupCoreLocation() //initialise the location services
         
-        collectionView?.backgroundColor = .red
+        collectionView?.backgroundColor = .white
         navigationController?.navigationBar.addSubview(searchBar)
         let navBar = navigationController?.navigationBar
         
@@ -68,11 +61,10 @@ class CheckInController: UICollectionViewController , UICollectionViewDelegateFl
         collectionView?.keyboardDismissMode = .onDrag
         
         DispatchQueue.main.async {
-            for venueType in ["Bar", "Hotel", "Restaurant"] {
+            for venueType in ["De Hallen"] {
                 self.fetchVenues(venueType:venueType)
             }
         }
- 
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,13 +94,17 @@ fileprivate func fetchVenues(venueType: String) {
                 for mapItem in response.mapItems{
                     //let placemark = mapItem.placemark
                     print(mapItem)
+                    print(mapItem.placemark)
+                    var currentPlacemark = mapItem.placemark
+                    
                     let venue = Venue(locationid: "123",
                                       dictionary: ["name" : mapItem.name,
+                                                   "address":  "street address",//"123 big street amsterdam",
+                                                    "distance":"123yd",
                                                    "latitude":"123",
                                                    "longitude":"123",
                                                    "isCurrentLocation":"false"])
                     //only load items < 100m away
-                    //print("**RADIUS = ", mapItem.placemark.radius)
                     self.venues.append(venue)
                 }
             }
